@@ -1,0 +1,29 @@
+restart:
+
+m := 1:
+k := 5:
+Tmax := 10:
+v0 := 3:
+x0 := 0:
+
+de := diff(x(t), t$2) = -k/m*x(t):
+
+particular_solution := dsolve(
+    {de, x(0) = x0, D(x)(0) = v0},
+    x(t)
+):
+
+numerical_solution := dsolve(
+    {de, x(0) = x0, D(x)(0) = v0},
+    numeric,
+    range = 0..Tmax
+):
+
+plots:-odeplot(
+    numerical_solution,
+    [t, x(t)],
+    0..Tmax,
+    labels = ["t", "x(t)"],
+    title = "Spring-Mass System",
+    gridlines = true
+);
