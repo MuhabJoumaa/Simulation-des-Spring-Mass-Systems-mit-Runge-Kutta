@@ -5,6 +5,8 @@ The program calculates the object's position over time based on the initial posi
 There are two versions of the program; one was written in Python and one in Maple.
 
 Differential equation:
+[
 $$
 \frac{d^2x}{dt^2} = -\frac{k}{m}x
 $$
+]
